@@ -4,753 +4,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Raleway&display=swap" rel="stylesheet">
-
-
-
-    <title>Task 10 Updated </title>
+    <title>Webpage design using bootstrap</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <style>
-        body {
-            font-family: 'Fira Sans', sans-serif;
-            font-family: 'Raleway', sans-serif;
-        }
-
-        .bg-danger {
-            background-color: #c8001e !important;
-        }
-
-        .text-danger {
-            color: #c8001e !important;
-
-        }
-
-        .bg-light {
-            background-color: #EAEAEA !important;
-        }
-
-        .sidebar {
-            width: 100%;
-        }
-
-        .logo img {
-            width: 50%;
-        }
-
-        .logo,
-        .sidebar p {
-            margin-top: 30px;
-            margin-left: 30px;
-        }
-
-        .nav {
-            width: 100%;
-        }
-
-        .side-navbar {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: start;
-            padding: 0;
-            margin-top: 60px;
-        }
-
-        .navbar-item {
-            width: 100%;
-            padding: 20px;
-            padding-left: 30px;
-            list-style-type: none;
-        }
-
-        .navbar-link {
-            text-decoration: none;
-            color: black;
+        .topbar {
+            height: 60px;
         }
 
         .navbar-item:hover {
             background-color: #c8001e;
-        }
-
-        .navbar-item:hover .navbar-link {
             color: white;
         }
 
-        .has-dropdown {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .has-dropdown:hover {
-            background-color: white;
-        }
-
-        .has-dropdown:hover .navbar-link {
-            color: #c8001e;
-        }
-
-        .dropdown {
+        .dropdown-menu ul {
             width: 100%;
+            list-style-type: none;
+            padding: 0;
         }
 
-        .dropdown-li {
-            padding-left: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .red-circle {
-            width: 16px;
-            height: 16px;
-            background-color: #c8001e;
-            content: "";
-            border-radius: 50%;
-        }
-
-        .white-circle {
-            width: 12px;
-            height: 12px;
-            background-color: white;
-            content: "";
-            border-radius: 50%;
-        }
-
-
-        .rounded-50 {
-            border-radius: 50%;
-        }
-
-        .bg-danger-25 {
-            background-color: rgba(255, 0, 0, 0.171);
-        }
-
-
-        .toggle-button:hover .side-menu {
-            display: block !important;
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            z-index: 100 !;
-
-        }
-
-        .fw-500 {
-            font-weight: 500;
-        }
-
-        .s-m-click,
-        .s-m-not-click {
-            width: 330px;
-            position: fixed;
-            top: 0;
-            transition: 0.4s linear;
-            z-index: 999;
-        }
-
-        .s-m-not-click {
-            left: -100%;
-        }
-
-        .s-m-click {
-            left: 0;
-        }
-
-        .mouse-pointer{
-            cursor: pointer;
+        .dropdown-menu:hover {
+            color: #c8001e;
         }
     </style>
 </head>
 
 <body class="bg-light">
+    <section class="container-fluid  p-0 m-0 border d-flex">
 
-    <div class="row g-0 left main-container d-flex p-0">
-        <div id="responsive" class="responsive-sidebar s-m-not-click side-menu d-lg-none bg-white">
-            <div class="position-sticky sidebar">
-                <!-- header-->
-                <div class="d-flex justify-content-end p-2">
-                    <img src="./images/cross.png" alt="" class="align-self-start mouse-pointer" style="width: 25px;"
-                        onclick="close_sidebar()">
-                </div>
-                <header>
-                    <div class="p-0 m-0 ps-4 pb-2">
-                        <img src="./images/logo.png" alt="" style="width:18%">
-                    </div>
-                    <p class="fw-bold small px-4 m-0">Multi Site Admin <span>&gt;</span></p>
-                    <hr style="background-color: red; height: 2px;">
-                </header>
-                <!-- navbar -->
-                <nav>
-                    <ul class="p-0">
-                        <li class="navbar-item px-4 py-2">
-                            <a href="#" class="navbar-link">Dashboard</a>
-                        </li>
-                        <li class="navbar-item px-4 py-2">
-                            <a href="#" class="navbar-link">Admin Roles</a>
-                        </li>
-                        <li class="navbar-item px-4 py-2 has-dropdown">
-                            <a href="#" class="navbar-link ">Properites Roles</a>
-                            <div class="red-circle"></div>
-                        </li>
-                        <ul class="dropdown p-0">
-                            <li class="navbar-item px-5 py-2 dropdown-li ">
-                                <a href="#" class="navbar-link">Adam's Family Home</a>
-                                <div class="white-circle"></div>
-                            </li>
-                            <li class="navbar-item px-5 py-2 dropdown-li ">
-                                <a href="#" class=" navbar-link">Johnson Law HQ</a>
-                                <div class="white-circle"></div>
-                            </li>
-                            <li class="navbar-item px-5 py-2 dropdown-li ">
-                                <a href="#" class=" navbar-link">Cleveland Hospital</a>
-                                <div class="white-circle"></div>
-                            </li>
-                            <li class="navbar-item px-5 py-2 dropdown-li ">
-                                <a href="#" class=" navbar-link">Bright Future School</a>
-                                <div class="white-circle"></div>
-                            </li>
-                        </ul>
-                        <li class="navbar-item px-4 py-2">
-                            <a href="#" class="navbar-link">Create New Lock</a>
-                        </li>
-                        <li class="navbar-item px-4 py-2">
-                            <a href="#" class="navbar-link">Account Settings</a>
-                        </li>
-                    </ul>
-                </nav>
+        <!-- sidebar -->
+
+        <aside class="sidebar w-25 d-none d-sm-block bg-white">
+            <div class="mt-4 ms-4"">
+                <img src=" ./images/logo.png" alt="" height="75%">
+                <p class="mt-3">Multi Site Admin <span class="ms-2">⌵</span> </p>
             </div>
+            <hr>
+            <ul class="list-group mt-4 ms-2">
+                <li class="navbar-item border-0 list-group-item d-flex justify-content-between align-items-center">
+                    Dashboard
+                </li>
+                <li class="navbar-item border-0 list-group-item d-flex justify-content-between align-items-center">
+                    Admin Roles
+                </li>
+                <li class="dropdown-menu border-0 list-group-item align-items-center">
+                    Properties
 
-        </div>
+                </li>
+                <ul class="list-group">
+                    <li
+                        class="navbar-item border-0 list-group-item d-flex justify-content-between align-items-center ps-5">
+                        Adam’s Family Home
+                        <!-- <span class="badge badge-primary badge-pill">14</span> -->
+                    </li>
+                    <li
+                        class="navbar-item border-0 list-group-item d-flex justify-content-between align-items-center ps-5">
+                        Johnson Law HQ
+                    </li>
+                    <li
+                        class="navbar-item border-0 list-group-item d-flex justify-content-between align-items-center ps-5">
+                        Cleveland Hospital
+                    </li>
+                    <li
+                        class="navbar-item border-0 list-group-item d-flex justify-content-between align-items-center ps-5">
+                        Bright Future School
+                    </li>
+                </ul>
 
+                <li class="navbar-item border-0 list-group-item d-flex justify-content-between align-items-center">
+                    Create New Lock
+                </li>
+                <li class="navbar-item border-0 list-group-item d-flex justify-content-between align-items-center">
+                    Reporting & Review
+                </li>
+                <li class="navbar-item border-0 list-group-item d-flex justify-content-between align-items-center">
+                    Account Settings
+                </li>
+            </ul>
+        </aside>
+        <!-- sidebar -->
 
-        <!-- Left Section -->
-        <div class="col-lg-3 side-menu d-none d-lg-block bg-white">
-            <div class="sidebar">
-                <!-- header-->
-                <header>
-                    <div class="logo">
-                        <img src="./images/logo.png" alt="">
+        <section class="container-fluid d-flex flex-column justify-content-between m-4 g-0">
+            <div class="topbar d-flex align-items-center px-3 justify-content-between bg-white  mb-5 rounded">
+               
+                <div class="d-flex justify-content-start">
+                    <div class="d-flex g-0 me-4">
+                        <div class="me-2">
+                            <img src="./images/file-icon.png" alt="" width="100%">
+                        </div>
+                        <p class="m-0">Do you know the latest updates of 2023?</p>
                     </div>
-                    <p class="fw-bold fs-5">Multi Site Admin <span>&gt;</span></p>
-                    <hr style="background-color: red; height: 2px;">
-                </header>
-                <!-- navbar -->
-                <nav>
-                    <ul class="p-0">
-                        <li class="navbar-item">
-                            <a href="#" class="navbar-link">Dashboard</a>
-                        </li>
-                        <li class="navbar-item">
-                            <a href="#" class="navbar-link">Admin Roles</a>
-                        </li>
-                        <li class="navbar-item has-dropdown">
-                            <a href="#" class="navbar-link ">Properites Roles</a>
-                            <div class="red-circle"></div>
-                        </li>
-                        <ul class="dropdown p-0">
-                            <li class="navbar-item dropdown-li ">
-                                <a href="#" class="navbar-link">Adam's Family Home</a>
-                                <div class="white-circle"></div>
-                            </li>
-                            <li class="navbar-item dropdown-li ">
-                                <a href="#" class=" navbar-link">Adam's Family Home</a>
-                                <div class="white-circle"></div>
-                            </li>
-                        </ul>
-                        <li class="navbar-item">
-                            <a href="#" class="navbar-link">Admin Roles</a>
-                        </li>
-                    </ul>
-                </nav>
-
-            </div>
-        </div>
-        <div class="col-1 bg-white w-100 d-lg-none">
-            <img src="./images/menu.png" class="mouse-pointer" alt="" style="width: 35px; height: 35px;" onclick="open_sidebar()">
-        </div>
-
-        <div class="col-lg-9 right p-3">
-            <div class="row g-0">
-                <div class="col-12">
-                    <div class="topbar bg-white rounded-3 row g-0  p-3 " id="topbar">
-                        <div class="col-md-9 d-flex justify-content-between align-items-center">
-
-                            <div class="row g-0">
-
-                                <div
-                                    class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start">
-                                    <div class="">
-                                        <img src="./images/file-icon.png" alt=""
-                                            class="bg-danger-25 p-2 me-2 rounded-50">
-                                    </div>
-                                    <div class="small">
-                                        Do you know the latest updates of 2023?
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="col-12 col-md-6  d-flex align-items-center justify-content-center justify-content-md-start pe-3 me-md-0">
-                                    <div class="">
-                                        <img src="./images/party-cone-icon.png" alt="" class="p-2">
-                                    </div>
-                                    <div class="small text-danger">
-                                        An overview of our update is available!
-                                    </div>
-                                </div>
-                            </div>
-
+                    <div class="d-flex g-0">
+                        <div class="mx-2">
+                            <img src="./images/party-cone-icon.png" alt="" width="100%">
                         </div>
-                        <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
-                            <div class="mx-2 mx-md-2">
-                                <img src="./images/notification-icon.png" alt="">
-                            </div>
-                            <div class="mx-md-0">
-                                <img src="./images/profile-pic.png" alt="">
-                            </div>
-                        </div>
-
+                        <p class="m-0">An overview of our update is available!</p>
                     </div>
                 </div>
 
-                <!-- Account section -->
-
-                <div class="account bg-white rounded-3 my-5 col-12 p-3 pt-4">
-                    <!-- Heading section -->
-                    <div class="my-3 row g-0">
-                        <div class="col-12 d-flex">
-                            <h3 class="fw-bold" style="width: auto;">
-                                Account Details
-                            </h3>
-                            <div class="mx-2" style="border-top:1px solid #C5C5C5;margin-top: 25px; width: 66%;">
-                            </div>
-                            <div style="margin-top: 11px; width: 5%;">&gt;</div>
-                        </div>
-                    </div>
-                    <!-- Picture and Bio section -->
-                    <div class="row g-0">
-                        <div class="col-md-2 col-12 p-2 mb-3 mx-auto">
-                            <img src="./images/nature-pic.png" alt="" width="100%" class="" style="border-radius: 50%;">
-                        </div>
-
-                        <div class="col-md-10 col-12">
-                            <h5 class="text-danger fw-bold">Adam's Family House</h5>
-                            <p class="small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ea
-                                nesciunt laborum
-                                aliquam molestiae possimus assumenda quidem vitae, neque ex omnis dignissimos ipsum!
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto a fugiat doloribus
-                                quia, earum blanditiis, fuga quidem ea inventore possimus maiores laborum provident
-                                tempore cum in autem eius. Ducimus, atque.
-                            </p>
-
-                            <div class="row my-4 g-0">
-
-                                <div class="col-xl-6 col-md-9 col-12">
-                                    <div class="row g-0">
-
-                                        <div class="col-md-6 col-12 d-flex">
-                                            <div>
-                                                <img src="./images/Map-icon.png" alt="">
-                                            </div>
-                                            <div class="ms-2">
-                                                <h5 class="fw-bold">Leasing Agent</h5>
-                                                <p class="small">Jonathan Cleveland</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 col-12 d-flex">
-                                            <div>
-                                                <img src="./images/Map-icon.png" alt="">
-                                            </div>
-                                            <div class="ms-2">
-                                                <h5 class="fw-bold">Address</h5>
-                                                <p class="small">Lorem Ipsum Sit Amet Dummy Pin, Dummy place</p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="row g-0">
-
-                                        <div class="col-md-6 col-12 d-flex">
-                                            <div>
-                                                <img src="./images/Map-icon.png" alt="">
-                                            </div>
-                                            <div class="ms-2">
-                                                <h5 class="fw-bold">Contact Number</h5>
-                                                <p class="small">+1 123 456 789</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 col-12 d-flex">
-                                            <div>
-                                                <img src="./images/Map-icon.png" alt="">
-                                            </div>
-                                            <div class="ms-2">
-                                                <h5 class="fw-bold">Email Address</h5>
-                                                <p class="small">youremail@gmail.com</p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-md-3 col-12 d-flex justify-content-end align-items-end">
-                                    <button class="btn btn-outline-danger align-self-end me-3 mb-3 ">Edit
-                                        Profile</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- lock section  -->
-                <div class="lock bg-white col-12 rounded-3 p-3 pt-4">
-                    <!-- Heading section -->
-                    <div class="mt-3 row g-0">
-                        <div class="col-12 d-flex ustify-content-between">
-                            <h3 class="text-start fw-bold" style="min-width: 20%; height: 50px;">
-                                Lock Controls
-                            </h3>
-                            <div class="mx-2" style="border-top:1px solid #C5C5C5;margin-top: 25px; width: 70%;">
-
-                            </div>
-                            <div class="text-center" style="margin-top: 11px; width: auto;">&gt;</div>
-                        </div>
-                    </div>
-                    <!-- Heading end -->
-
-                    <!-- Add Lock Section  -->
-                    <div class="row g-0" style="width: 85%;">
-                        <div class="col-12 d-flex justify-content-end align-items-start w-100">
-                            <div class="mx-2">
-                                <img src="./images/plus-icon.png" alt="">
-                            </div>
-                            <p class="mt-1 align-self-end small">Add New Lock</p>
-                        </div>
-
-                    </div>
-
-                    <!-- Card section  -->
-                    <div class="row g-0">
-                        <div
-                            class="col-12 my-2 d-flex align-items-center justify-content-center col-sm-6 col-md-4 col-lg-4 col-xl-3">
-                            <div class=" card flex flex-column border border-danger rounded-3 mb-2"
-                                style="width: 200px; height: 150px;">
-                                <div class="d-flex p-1 border-bottom align-items-center border-danger">
-                                    <div class="ms-2">
-                                        <img src="./images/lock-icon.png" width="80%" alt="">
-                                    </div>
-                                    <span class="small  mt-1">Smart Lock1</span>
-                                </div>
-                                <div class="d-flex p-1 border-bottom border-danger">
-                                    <div class="ms-2 me-1">
-                                        <img src="./images/Map-icon.png" alt="">
-                                    </div>
-                                    <span class="small mt-1">Main Door</span>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between  ">
-                                    <span class="small py-1 px-3">Status</span>
-                                    <div class="">
-                                        <button class="btn btn-success py-0 mt-1 me-1">Open</button>
-                                    </div>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between">
-                                    <span class="small py-1 px-3">Enabled</span>
-                                    <div>
-                                        <button class="btn btn-success py-2 mt-1 me-1 px-3 d-flex justify-content-end">
-                                            <div
-                                                style="width: 10px; height: 10px; border-radius: 50%; background-color: white;">
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div
-                            class="col-12 my-2 d-flex align-items-center justify-content-center col-sm-6 col-md-4 col-lg-4 col-xl-3">
-                            <div class=" card flex flex-column border border-danger rounded-3 mb-2"
-                                style="width: 200px; height: 150px;">
-                                <div class="d-flex p-1 border-bottom align-items-center border-danger">
-                                    <div class="ms-2">
-                                        <img src="./images/lock-icon.png" width="80%" alt="">
-                                    </div>
-                                    <span class="small  mt-1">Smart Lock1</span>
-                                </div>
-                                <div class="d-flex p-1 border-bottom border-danger">
-                                    <div class="ms-2 me-1">
-                                        <img src="./images/Map-icon.png" alt="">
-                                    </div>
-                                    <span class="small mt-1">Main Door</span>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between  ">
-                                    <span class="small py-1 px-3">Status</span>
-                                    <div class="">
-                                        <button class="btn btn-success py-0 mt-1 me-1">Open</button>
-                                    </div>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between">
-                                    <span class="small py-1 px-3">Enabled</span>
-                                    <div>
-                                        <button class="btn btn-success py-2 mt-1 me-1 px-3 d-flex justify-content-end">
-                                            <div
-                                                style="width: 10px; height: 10px; border-radius: 50%; background-color: white;">
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div
-                            class="col-12 my-2 d-flex align-items-center justify-content-center col-sm-6 col-md-4 col-lg-4 col-xl-3">
-                            <div class=" card flex flex-column border border-danger rounded-3 mb-2"
-                                style="width: 200px; height: 150px;">
-                                <div class="d-flex p-1 border-bottom align-items-center border-danger">
-                                    <div class="ms-2">
-                                        <img src="./images/lock-icon.png" width="80%" alt="">
-                                    </div>
-                                    <span class="small  mt-1">Smart Lock1</span>
-                                </div>
-                                <div class="d-flex p-1 border-bottom border-danger">
-                                    <div class="ms-2 me-1">
-                                        <img src="./images/Map-icon.png" alt="">
-                                    </div>
-                                    <span class="small mt-1">Main Door</span>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between  ">
-                                    <span class="small py-1 px-3">Status</span>
-                                    <div class="">
-                                        <button class="btn btn-success py-0 mt-1 me-1">Open</button>
-                                    </div>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between">
-                                    <span class="small py-1 px-3">Enabled</span>
-                                    <div>
-                                        <button class="btn btn-success py-2 mt-1 me-1 px-3 d-flex justify-content-end">
-                                            <div
-                                                style="width: 10px; height: 10px; border-radius: 50%; background-color: white;">
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div
-                            class="col-12 my-2 d-flex align-items-center justify-content-center col-sm-6 col-md-4 col-lg-4 col-xl-3">
-                            <div class=" card flex flex-column border border-danger rounded-3 mb-2"
-                                style="width: 200px; height: 150px;">
-                                <div class="d-flex p-1 border-bottom align-items-center border-danger">
-                                    <div class="ms-2">
-                                        <img src="./images/lock-icon.png" width="80%" alt="">
-                                    </div>
-                                    <span class="small  mt-1">Smart Lock1</span>
-                                </div>
-                                <div class="d-flex p-1 border-bottom border-danger">
-                                    <div class="ms-2 me-1">
-                                        <img src="./images/Map-icon.png" alt="">
-                                    </div>
-                                    <span class="small mt-1">Main Door</span>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between  ">
-                                    <span class="small py-1 px-3">Status</span>
-                                    <div class="">
-                                        <button class="btn btn-success py-0 mt-1 me-1">Open</button>
-                                    </div>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between">
-                                    <span class="small py-1 px-3">Enabled</span>
-                                    <div>
-                                        <button class="btn btn-success py-2 mt-1 me-1 px-3 d-flex justify-content-end">
-                                            <div
-                                                style="width: 10px; height: 10px; border-radius: 50%; background-color: white;">
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div
-                            class="col-12 my-2 d-flex align-items-center justify-content-center col-sm-6 col-md-4 col-lg-4 col-xl-3">
-                            <div class=" card flex flex-column border border-danger rounded-3 mb-2"
-                                style="width: 200px; height: 150px;">
-                                <div class="d-flex p-1 border-bottom align-items-center border-danger">
-                                    <div class="ms-2">
-                                        <img src="./images/lock-icon.png" width="80%" alt="">
-                                    </div>
-                                    <span class="small  mt-1">Smart Lock1</span>
-                                </div>
-                                <div class="d-flex p-1 border-bottom border-danger">
-                                    <div class="ms-2 me-1">
-                                        <img src="./images/Map-icon.png" alt="">
-                                    </div>
-                                    <span class="small mt-1">Main Door</span>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between  ">
-                                    <span class="small py-1 px-3">Status</span>
-                                    <div class="">
-                                        <button class="btn btn-success py-0 mt-1 me-1">Open</button>
-                                    </div>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between">
-                                    <span class="small py-1 px-3">Enabled</span>
-                                    <div>
-                                        <button class="btn btn-success py-2 mt-1 me-1 px-3 d-flex justify-content-end">
-                                            <div
-                                                style="width: 10px; height: 10px; border-radius: 50%; background-color: white;">
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div
-                            class="col-12 my-2 d-flex align-items-center justify-content-center col-sm-6 col-md-4 col-lg-4 col-xl-3">
-                            <div class=" card flex flex-column border border-danger rounded-3 mb-2"
-                                style="width: 200px; height: 150px;">
-                                <div class="d-flex p-1 border-bottom align-items-center border-danger">
-                                    <div class="ms-2">
-                                        <img src="./images/lock-icon.png" width="80%" alt="">
-                                    </div>
-                                    <span class="small  mt-1">Smart Lock1</span>
-                                </div>
-                                <div class="d-flex p-1 border-bottom border-danger">
-                                    <div class="ms-2 me-1">
-                                        <img src="./images/Map-icon.png" alt="">
-                                    </div>
-                                    <span class="small mt-1">Main Door</span>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between  ">
-                                    <span class="small py-1 px-3">Status</span>
-                                    <div class="">
-                                        <button class="btn btn-success py-0 mt-1 me-1">Open</button>
-                                    </div>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between">
-                                    <span class="small py-1 px-3">Enabled</span>
-                                    <div>
-                                        <button class="btn btn-success py-2 mt-1 me-1 px-3 d-flex justify-content-end">
-                                            <div
-                                                style="width: 10px; height: 10px; border-radius: 50%; background-color: white;">
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div
-                            class="col-12 my-2 d-flex align-items-center justify-content-center col-sm-6 col-md-4 col-lg-4 col-xl-3">
-                            <div class=" card flex flex-column border border-danger rounded-3 mb-2"
-                                style="width: 200px; height: 150px;">
-                                <div class="d-flex p-1 border-bottom align-items-center border-danger">
-                                    <div class="ms-2">
-                                        <img src="./images/lock-icon.png" width="80%" alt="">
-                                    </div>
-                                    <span class="small  mt-1">Smart Lock1</span>
-                                </div>
-                                <div class="d-flex p-1 border-bottom border-danger">
-                                    <div class="ms-2 me-1">
-                                        <img src="./images/Map-icon.png" alt="">
-                                    </div>
-                                    <span class="small mt-1">Main Door</span>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between  ">
-                                    <span class="small py-1 px-3">Status</span>
-                                    <div class="">
-                                        <button class="btn btn-success py-0 mt-1 me-1">Open</button>
-                                    </div>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between">
-                                    <span class="small py-1 px-3">Enabled</span>
-                                    <div>
-                                        <button class="btn btn-success py-2 mt-1 me-1 px-3 d-flex justify-content-end">
-                                            <div
-                                                style="width: 10px; height: 10px; border-radius: 50%; background-color: white;">
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div
-                            class="col-12 my-2 d-flex align-items-center justify-content-center col-sm-6 col-md-4 col-lg-4 col-xl-3">
-                            <div class=" card flex flex-column border border-danger rounded-3 mb-2"
-                                style="width: 200px; height: 150px;">
-                                <div class="d-flex p-1 border-bottom align-items-center border-danger">
-                                    <div class="ms-2">
-                                        <img src="./images/lock-icon.png" width="80%" alt="">
-                                    </div>
-                                    <span class="small  mt-1">Smart Lock1</span>
-                                </div>
-                                <div class="d-flex p-1 border-bottom border-danger">
-                                    <div class="ms-2 me-1">
-                                        <img src="./images/Map-icon.png" alt="">
-                                    </div>
-                                    <span class="small mt-1">Main Door</span>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between  ">
-                                    <span class="small py-1 px-3">Status</span>
-                                    <div class="">
-                                        <button class="btn btn-success py-0 mt-1 me-1">Open</button>
-                                    </div>
-                                </div>
-                                <div class="d-flex p-1 justify-content-between">
-                                    <span class="small py-1 px-3">Enabled</span>
-                                    <div>
-                                        <button class="btn btn-success py-2 mt-1 me-1 px-3 d-flex justify-content-end">
-                                            <div
-                                                style="width: 10px; height: 10px; border-radius: 50%; background-color: white;">
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-
-                    </div>
-
+                <div>
+                    <img src="./images/notification-icon.png" alt="" class="mx-2">
+                    <img src="./images/profile-pic.png" alt="">
                 </div>
             </div>
 
+            <div class="Account-details p-4 bg-white mt-5 mx-auto">
+                <div class="d-flex">
+                    <h3>
+                        Account Details
+                    </h3>
+                    <div style="margin-left:0 5px; border-top:1px solid black;margin-top: 25px; width: 75%;">
+
+                    </div>
+                    <div style="margin-top: 11px;">&gt;</div>
+                </div>
+
+                <div class="d-flex mt-4">
+                    <img src="./images/nature-pic.png" alt="" class="me-4">
+                    <div>
+                        <h3>Adam’s Family Home</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
+                </div>
+<!-- Address section -->
+                <div class="d-flex justify-content-arround mt-4">
+                    <div>
+                        <div class="d-flex justify-content-around">
+                            <div class="d-flex w-50 justify-content-center">
+                                <div class="d-flex mx-2 p-2">
+                                    <div>
+                                        <img src="./images/Map-icon.png" alt="">
+                                    </div>
+                                    <div>
+                                        <h4>Leasing Agent</h4>
+                                        <p>Jonathan Cleveland</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex p-2">
+                                    <div>
+                                        <img src="./images/Map-icon.png" alt="">
+                                    </div>
+                                    <div>
+                                        <h4>Address</h4>
+                                        <p>Lorem Ipsum Sit Amet Dummy Pin, Dummy place</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <div class="d-flex w-50 justify-content-center ">
+                                <div class="d-flex mx-2 p-2">
+                                    <div>
+                                        <img src="./images/Map-icon.png" alt="">
+                                    </div>
+                                    <div>
+                                        <h4>Leasing Agent</h4>
+                                        <p>Jonathan Cleveland</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex p-2">
+                                    <div>
+                                        <img src="./images/Map-icon.png" alt="">
+                                    </div>
+                                    <div>
+                                        <h4>Address</h4>
+                                        <p>Lorem Ipsum Sit Amet Dummy Pin, Dummy place</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <button class="btn btn-outline-danger align-self-end  ">
+                        Edit Profile
+                    </button>
+                </div>
+
+            </div>
 
 
-        </div>
+            <div class="Account-details border">
+                Lock Controles
+            </div>
+        </section>
 
-    </div>
 
-
-    <script>
-
-        function open_sidebar() {
-            console.log('open clicked');
-            var x = document.getElementById("responsive");
-            x.classList.add('s-m-click');
-            x.classList.remove('s-m-not-click');
-        }
-        function close_sidebar() {
-            var x = document.getElementById("responsive");
-            x.classList.add('s-m-not-click');
-            x.classList.remove('s-m-click');
-        }
-    </script>
+    </section>
+<script src="./js/jquery-v3.7.1.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
